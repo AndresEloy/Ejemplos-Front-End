@@ -1,0 +1,167 @@
+:root{
+    --blanco:#FFF7EA;
+    --oscuro:#212121;
+    --primario:#F38CB1;
+    --secundario:#314D77;
+    --gris:#FDC2C2;
+    --grisclaro: #dfe9f3 ;
+   
+}
+/*Goblales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;/*Las dimensiones del elemeno se calculan como: ancho = borde + relleno + ancho del contenido, y altura = borde + relleno + altura del contenido.*/
+    /*con el codigo anterior ya no hay problema con las dimensiones, se ajusta*/
+}
+/*del sig codigo*/
+/*el selector (universal) * dice selecciona todos los elementos del html*/
+/*las comas para cuando a 2 objetos se les den las misma propiedades*/
+/*cuando se usa after en algun objeto se crea un contenido que "no existe", no se puede seleecionar
+en este caso lo que hace es aplicar el box-sizing a ese contenido también */
+*, *:before, *:after {
+    box-sizing: inherit; /*inherit=heredar*/
+  }
+body{
+    font-size: 16px; /*1rem = 10px*/
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100% ); /*Degradado de fondo, gradiente lineal: (dirección, color con el que inicia, color al que va)*/
+}
+
+.contenedor{/*Centrar*/
+    /*ancho fijo width: 120rem;/*1200px*/
+    max-width: 120rem;/*1200px como máximo y solo si esta disponible sino toma el max disponible con el display block */
+    margin: 0 auto;
+ }
+ 
+ .boton{
+     background-color: var(--secundario);
+     color: var(--blanco);
+     padding: 1rem 3rem ; /*10px y 30px*/
+     margin-top: 1rem;
+     font-size: 2rem;
+     text-decoration: none;
+     text-transform: uppercase; /*texto en mayusculas*/
+     font-weight: bold; /*negritas*/
+     border-radius: 0.5rem; /*esquinas redondeadas*/
+     width: 90%;
+     text-align: center;
+ }
+ /*los media querys  son para poner un minimo de tamaño, en este ejemplo minimo de 768px la pantalla, el tamaño del boton es auto*/
+ @media (min-width: 768px){
+     .boton{
+         width: auto;
+     }
+ }
+
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);  /*codigo de la sombra*/
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;/*borde redondeado*/
+ }
+
+/*Tipografía*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+ 
+}
+
+/*titulos*/
+.titulo span{
+    font-size: 2rem;
+}
+
+/*Navegacion Principal*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{ /*barra de navegacion*/
+   
+    
+    display: flex; /*direccion*/
+    flex-direction: column; /*que se ponga en columna la barra de navegacion*/
+    justify-content: space-between;/*Esparcir*/
+
+
+}
+@media(min-width:768px){ /*desde una tablet*/
+    .navegacion-principal{
+        flex-direction: row;/*a partir de 768px se pone en fila*/
+    }
+}
+.navegacion-principal a{ /*enlace*/
+    padding: 1rem;
+    
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem; 
+    font-weight: 700;/*negritas*/
+}
+
+.navegacion-principal a:hover{/*efecto cuando estamos en el link*/
+    background-color: var(--primario);
+    color: var(--oscuro);
+   
+}
+
+/*Hero*/
+ .hero{ /*imagen*/
+     background-image: url(../img/hero.jpg);
+     background-repeat: no-repeat; /*para que la imagen no se repita*/     
+     background-size: cover;/*tamaño de la imagen todo el ancho disponible*/
+     height: 450px;
+     position: relative;
+     margin-bottom: 2rem;
+
+ }
+  /*posición relativa: Padre*/
+ /*posición absoluta:hijo*/
+ 
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0, 0.7); /*Sintaxis Anterior*/
+    background-color: rgb(0 0 0 0 / 70%) ; /*algunos navegadores aún no la soportan*/
+    width: 100%;
+    height: 100%;
+    display: flex; /*para alinear el contenido de la clase horizontalmente*/
+    flex-direction: column; /*lo alinea de arriba a bajo*/ 
+    align-items: center; /*alinea los objetos en el centro*/
+    justify-content: center; /*pone el contenido justo en el centro*/
+
+    
+}
+/*Con el width y el height lo que hace es tomar todo el espacio disponible, donde el espacio disponible es el espacio del .hero debido a que es el padre */
+
+.contenido-hero h2,
+.contenido-hero p{
+    color:var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+  display:flex;
+  align-items: flex-end;   /*para ponerlo abajo*/
+}
+
+/*Servicios*/
+@media (min-width: 768px){
+    .servicios{
+        
+        display: grid; /*agregar css grid*/
+        /* grid-template-columns: 300px 300px; /*2 columnas de 300px, parte superior en inferior
+        grid-template-rows: 200px 800px; /*columnas parte supp 200px parte inferior 800px
+        grid: 200px 800px/300px 300px;  version corta */
+    grid-template-columns:repeat(3, 1fr);
+    
+        }
+}
