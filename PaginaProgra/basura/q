@@ -1,0 +1,108 @@
+       <!-- <div class="parte2">
+            <div class="cparte2">
+                <div class="ccparte2">
+                    <h4>¿Para que sirve un Do-While?</h4>
+                    <p>
+                  El do while es un ciclo en la programacion estructurada a objetos el cual nos permite realizar una accion basada en una sentencia.</p>
+                    
+                </div>
+                <div class="ccparte2">
+                    <h4>Estructura</h4>
+                    <p><pre>do{.............................
+                    .................
+                    .................
+                     Bloque de Instrucciones
+                    .................
+                    .................
+                    }while(condición de finalización); //por ejemplo numero != 23</pre></p>
+                    
+                </div>
+                <div class="ccparte2">
+                    <h4>Diagrama de Flujo</h4>
+                       <p><img src="imagenes/diagramadow.jpg"></p>
+                    
+                </div>
+            </div>
+        </div>-->
+          <!--<div class="parte4">
+            <div class="cparte4">
+                <h4>Ejercicios Do While (Dar click en la imagen para ver)</h4>
+                <link rel="stylesheet" href="flexslider.css" type="text/css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+                <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                 <script src="js/jquery.flexslider.js"></script>
+                  <script type="text/javascript" charset="utf-8">
+                $(window).load(function() {
+                 $('.flexslider').flexslider({
+                 touch: true,
+                pauseOnAction: false,
+                pauseOnHover: false,
+                    });
+                });
+        </script>
+    </head>
+    <body>
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <a title="If1" href="http://puntocomnoesunlenguaje.blogspot.mx/2012/10/estructura-repetitiva-en-java-1.html" target="_blank"><img src="imagenes/ejdow1.png" alt="if1" /></a>
+                <section class="flex-caption">
+                    
+                </section>
+            </li>
+            <li>
+                <a title="If1" href="http://puntocomnoesunlenguaje.blogspot.mx/2012/10/estructura-repetitiva-en-java-1.html" target="_blank"><img src="imagenes/ejdow2.png" alt="if1" /></a>
+                <section class="flex-caption">
+                    
+                </section>
+            </li>
+            <li>
+                <a title="If1" href="http://puntocomnoesunlenguaje.blogspot.mx/2012/10/estructura-repetitiva-en-java-1.html" target="_blank"><img src="imagenes/ejdow3.png" alt="if1" /></a>
+                <section class="flex-caption">
+                    
+                </section>
+            </li>
+        </ul>
+    </div>
+            </div>
+        </div>
+    </main>-->
+
+        <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+
+      /*var a = parseInt(document.getElementById("a1").value);*/
+
+
+
+      function drawChart() {
+
+        var a = parseInt(document.getElementById("a1").innerHTML);
+
+
+
+        var data = google.visualization.arrayToDataTable([
+          ['Precio', 'Demanda'],
+          ['0',  a],
+          ['20',  a],
+          ['40',  2],
+          ['60',  3],
+          ['80',  4],
+          ['100',  5],
+          ['120',  6]
+        ]);
+
+        var options = {
+          title: 'Curvas de Oferta.',
+          curveType: 'function',
+          
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+  
+    </script>
